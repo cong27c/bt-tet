@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bé tập tính</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="title">Bé tập tính</h1>
+      <form class="todo-form" id="calcForm">
+        <label for="so1">Nhập số thứ nhất</label>
+        <input
+          class="inputCss todo-input"
+          type="number"
+          id="so1"
+          name="so1"
+          required
+        /><br /><br />
+        <label for="so2">Nhập số thứ hai</label>
+        <input
+          class="inputCss todo-input"
+          type="number"
+          id="so2"
+          name="so2"
+          required
+        /><br /><br />
+
+        <div class="operations-List">
+          <input
+            type="radio"
+            class="operation"
+            name="operation"
+            value="+"
+            required
+          />Cộng
+          <input type="radio" class="operation" name="operation" value="-" />Trừ
+          <br /><br />
+          <input
+            type="radio"
+            class="operation"
+            name="operation"
+            value="*"
+          />Nhân
+          <input
+            type="radio"
+            class="operation"
+            name="operation"
+            value="/"
+          />Chia <br /><br />
+        </div>
+
+        <button type="submit" class="btn" id="calc">Tính</button>
+      </form>
+      <div class="result-container">
+        <p class="result-text">Kết quả:</p>
+        <p class="result" id="result"></p>
+      </div>
+    </div>
+    <script src="ex.js"></script>
+  </body>
+</html>

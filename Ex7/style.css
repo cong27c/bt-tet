@@ -1,0 +1,70 @@
+* {
+    box-sizing: border-box
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
+        'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+    text-align: center;
+    background-color: #fff;
+}
+.container {
+    position: relative;
+    width: 1000px;
+    height: 500px;
+    background-color: #ccc;
+    border-radius: 5px;
+}
+.title {
+    margin-top: 100px;
+}
+.inputCss {
+    padding: 5px;
+    width: 350px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+.result-css {
+    background: #efecec;
+}
+.operations-List {
+    margin-top: 70px;
+    position: absolute;
+    top: 20%;
+    left: 80% ;
+}
+.btn {
+    cursor: pointer;
+    position: absolute;
+    top: 37%;
+    left: 77% ;
+    margin-top: 75px;
+    padding: 10px 80px;
+    border-radius: 7px;
+    background-color: rgb(68, 0, 255);
+    color: white;
+    font-size: 18px;
+}
+.result-text {
+    position: absolute;
+    top: 51%;
+    left: 32% ;
+}
+
+.result {
+    position: absolute;
+    padding: 5px;
+    width: 350px;
+    height: 35px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    top: 50%;
+    left: 38% ;
+    text-align: left;
+}

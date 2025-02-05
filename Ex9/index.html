@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Giỏ Hàng</title>
+    <style>
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+      th,
+      td {
+        text-align: left;
+        padding: 8px;
+        border: 1px solid black;
+      }
+      .button {
+        background-color: #4caf50;
+        color: white;
+        padding: 8px 16px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      .cart-table {
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <table id="product-list">
+      <h2>Danh sách sản phẩm</h2>
+      <thead>
+        <tr>
+          <th>STT</th>
+          <th>Tên sản phẩm</th>
+          <th>Giá</th>
+          <th>Thêm vào giỏ hàng</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Sản phẩm 1</td>
+          <td>1000</td>
+          <td>
+            <button onclick="changeProductQuantity(1, -1)">-</button>
+            <input type="number" id="quantity-1" value="1" min="1" />
+            <button onclick="changeProductQuantity(1, 1)">+</button>
+            <button
+              onclick="addToCart(1, 1000, document.getElementById('quantity-1').value)"
+            >
+              Thêm
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Sản phẩm 2</td>
+          <td>2000</td>
+          <td>
+            <button onclick="changeProductQuantity(2, -1)">-</button>
+            <input type="number" id="quantity-2" value="1" min="1" />
+            <button onclick="changeProductQuantity(2, 1)">+</button>
+            <button
+              onclick="addToCart(2, 2000, document.getElementById('quantity-2').value)"
+            >
+              Thêm
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Sản phẩm 3</td>
+          <td>3000</td>
+          <td>
+            <button onclick="changeProductQuantity(3, -1)">-</button>
+            <input type="number" id="quantity-3" value="1" min="1" />
+            <button onclick="changeProductQuantity(3, 1)">+</button>
+            <button
+              onclick="addToCart(3, 3000, document.getElementById('quantity-3').value)"
+            >
+              Thêm
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>Sản phẩm 4</td>
+          <td>4000</td>
+          <td>
+            <button onclick="changeProductQuantity(4, -1)">-</button>
+            <input type="number" id="quantity-4" value="1" min="1" />
+            <button onclick="changeProductQuantity(4, 1)">+</button>
+            <button
+              onclick="addToCart(4, 4000, document.getElementById('quantity-4').value)"
+            >
+              Thêm
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <table id="cart-table">
+      <thead>
+        <h2>Giỏ hàng</h2>
+        <tr>
+          <th>STT</th>
+          <th>Tên sản phẩm</th>
+          <th>Giá</th>
+          <th>Số lượng</th>
+          <th>Thành tiền</th>
+          <th>Xoá</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+      <tfoot>
+        <tr>
+          <td colspan="4" style="text-align: center">
+            <strong>Tổng tiền</strong>
+          </td>
+          <td id="total-amount">0</td>
+          <td></td>
+        </tr>
+      </tfoot>
+    </table>
+    <button onclick="updateCart()">Cập nhật giỏ hàng</button>
+    <button onclick="clearCart()">Xoá giỏ hàng</button>
+
+    <script src="example.js"></script>
+  </body>
+</html>

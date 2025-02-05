@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
+          "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        background-color: #ccc;
+        text-align: center;
+      }
+      .cotainer {
+        background-color: #fff;
+        padding: 100px;
+        border-radius: 5px;
+      }
+      .in4 {
+        margin: 6px 0;
+        text-align: left;
+        font-weight: 600;
+      }
+      .todo-input {
+        width: 400px;
+        padding: 5px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+      }
+      .btn {
+        cursor: pointer;
+        margin-top: 20px;
+        padding: 10px 15px;
+        border-radius: 5px;
+        background: green;
+        color: white;
+        border: 1px solid blue;
+      }
+      .desc {
+        font-weight: 00;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cotainer">
+      <div class="title">
+        <h1>Chia Bill</h1>
+        <div class="content">
+          <div class="in4">Tổng bill</div>
+          <input type="text" class="todo-input" />
+          <div class="in4">Số người chia</div>
+          <input type="text" class="todo-input" />
+          <div class="in4">Tiền tip</div>
+          <input
+            type="text"
+            placeholder="Nhận tiền tip (nếu có)..."
+            class="todo-input"
+          />
+        </div>
+        <button class="btn">Tính tiền</button>
+        <p class="desc">.</p>
+        <p class="desc total"></p>
+      </div>
+    </div>
+    <script src="ex.js"></script>
+  </body>
+</html>
