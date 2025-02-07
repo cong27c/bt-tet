@@ -90,7 +90,6 @@ function createSlideShow() {
         clearInterval(handleInterval)
         handle()
         handleInterval = setInterval(handle, 3000)
-
     })
 
     prev.addEventListener("click", function () {

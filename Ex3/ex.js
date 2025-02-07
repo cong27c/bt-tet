@@ -337,18 +337,9 @@ const tarotDeck = [
     title.className = "title"
     title.textContent = "Bói Bài Tarot"
 
-    const btn = document.createElement('button')
-    btn.className = "btn"
-    btn.textContent = "Rút bài"
-
-    const subTitle = document.createElement("h2")
-    subTitle.className = "sub-title"
-
-    const desc = document.createElement("p")
-    desc.className = "desc"
-
-    const containerDesc = document.createElement("div")
-    containerDesc.className = "container-desc"
+    const btnDrawCard = document.createElement('button')
+    btnDrawCard.className = "btn btn-drawCard"
+    btnDrawCard.textContent = "Rút bài"
 
     const containerBtn = document.createElement("div")
     containerBtn.className = "container-btn"
@@ -364,21 +355,9 @@ const tarotDeck = [
     const cardContainer = document.createElement("div")
     cardContainer.className = "card-container"
 
-    // Hàm để rút bài tarot
-    function drawCard() {
-        let index = Math.floor(Math.random() * tarotDeck.length)
-        subTitle.textContent = tarotDeck[index].name
-        desc.textContent = tarotDeck[index].description
-    }
 
-    // Sự kiện cho nút "Rút bài"
-    btn.onclick = function() {
-        drawCard()
-    }
-
-    // Sự kiện cho nút "Rút thêm"
-    btnMore.onclick = function() {
-        const newCardContainer = document.createElement("div")
+function handle() {
+  const newCardContainer = document.createElement("div")
         newCardContainer.className = "new-card"
 
         let index = Math.floor(Math.random() * tarotDeck.length)
@@ -392,17 +371,19 @@ const tarotDeck = [
 
         newCardContainer.append(newSubTitle, newDesc)
         cardContainer.appendChild(newCardContainer) 
-    }
+}
 
-    // Sự kiện cho nút "Kết thúc"
+btnDrawCard.addEventListener("click", handle)
+
+   btnMore.addEventListener("click",handle)
+
     btnEnd.onclick = function() {
-        location.reload() 
+        const newCardContainer = document.querySelectorAll(".new-card")
+        newCardContainer.forEach(card => card.remove())
     }
 
-    containerDesc.append(subTitle, desc)
-    cardContainer.append(containerDesc)
     containerBtn.append(btnMore, btnEnd)
-    box.append(title, btn, cardContainer, containerBtn) 
+    box.append(title, btnDrawCard, cardContainer, containerBtn) 
     container.appendChild(box)
     document.body.appendChild(container)
 }
