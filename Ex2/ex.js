@@ -18,6 +18,10 @@ const slidesData = [
 ]
 
 function createSlideShow() {
+    if(!Array.isArray(slidesData) || slidesData.length <= 0) {
+        console.error("du lieu ko hp le")
+        return
+    }
     const slideShow = document.createElement("div")
     slideShow.className = "slide-show"
 

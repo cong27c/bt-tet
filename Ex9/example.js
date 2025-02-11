@@ -1,11 +1,13 @@
 const cart = JSON.parse(localStorage.getItem("cart")) || [];
 
+
 function saveCart() {
   localStorage.setItem("cart", JSON.stringify(cart));
 }
 
 function changeProductQuantity(productId, change) {
   const quantityInput = document.getElementById(`quantity-${productId}`);
+  
   let currentQuantity = parseInt(quantityInput.value, 10);
   currentQuantity += change;
   if (currentQuantity < 1) {
@@ -75,6 +77,7 @@ function changeQuantity(productId, change) {
 }
 
 function updateQuantity(productId, quantity) {
+  if(quantity < 1) return alert("quantity phai lon hon 0")
   const item = cart.find((item) => item.productId === productId);
   if (item) {
     item.quantity = Math.max(1, parseInt(quantity, 10));
@@ -85,13 +88,14 @@ function updateQuantity(productId, quantity) {
 function removeItem(productId) {
   const index = cart.findIndex((item) => item.productId === productId);
   if (confirm("Are u sure ?")) {
-    alert("Xóa sản phẩm khỏi giỏ hàng thành công");
     if (index > -1) {
       cart.splice(index, 1);
+      alert("Xóa sản phẩm khỏi giỏ hàng thành công");
       saveCart();
       renderCart();
     }
   }
+  
 }
 
 function updateCartSummary() {

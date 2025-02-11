@@ -1,8 +1,10 @@
 
+
 function calculate() {
     const so1 = parseFloat(document.getElementById('so1').value)
     const so2 = parseFloat(document.getElementById('so2').value)
     const operation = document.querySelector('input[name="operation"]:checked')
+    console.log(operation);
 
     let result
 

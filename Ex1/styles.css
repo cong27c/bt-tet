@@ -98,3 +98,26 @@ main {
     cursor: pointer;
     text-decoration: underline;
 }
+.task-title {
+    padding: 10px;
+    max-width: 200px;
+    word-wrap: break-word;
+}
+#allTask { 
+    position:absolute ;
+    top: 112px;
+    right: 270px;
+    color:  aqua;
+}
+#activeList {
+    position: absolute;
+    color: #50ad7e;
+    top: 172px;
+    right: 280px;
+} 
+#doneList {
+    position: absolute;
+    color: #ea9652;
+    top: 232px;
+    right: 260px;
+}

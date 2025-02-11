@@ -2,22 +2,22 @@ const categories = [
     {
       id: 1,
       name: "Electronics",
-      slugs: "electronics",
+      slug: "electronics",
       children: [
         {
           id: 2,
           name: "Laptops",
-          slugs: "laptops",
+          slug: "laptops",
           children: [
             {
               id: 3,
               name: "Apple",
-              slugs: "apple",
+              slug: "apple",
             },
             {
               id: 4,
               name: "Dell",
-              slugs: "dell",
+              slug: "dell",
             },
           ],
         },
@@ -31,12 +31,12 @@ const categories = [
     {
       id: 6,
       name: "Books",
-      slugs: "books",
+      slug: "books",
       children: [
         {
           id: 7,
           name: "Fiction",
-          slugs: "fiction",
+          slug: "fiction",
           children: [
             {
               id: 8,
@@ -58,44 +58,18 @@ const categories = [
       ],
     },
   ];
-//   function flattenCategories(arr, parentId = 0) {
-//     if (!Array.isArray(arr)) throw new Error("Mảng không hợp lệ");
-//     let flatten = [];
-//     for (const item of arr) {
-//         flatten.push({id: item.id, name: item.name, parentId});
-//         if (item.children && item.children.length > 0) {
-//             flatten = flatten.concat(flattenCategories(item.children, item.id));
-//         }   
-//     }
-//     return flatten;
-// }  
 
-// let handledArr = flattenCategories(categories)
-// console.log(handledArr);
-
-// function nestedArray(arr) {
-//     let obj = {}
-//     let newArr = []
-//     arr.forEach( item => {
-//         obj[item.id] = {...item, children: []}
-//     })
-//     arr.forEach( item => {
-//         if(item.parentId === 0) {
-//             newArr.push(obj[item.id])
-//         } else {
-//             obj[item.parentId].children.push(obj[item.id])
-//         }
-//     })
-//     return newArr
-// }
-// let newArr = nestedArray(handledArr)
-
-function createElementList(items) {
+function createElementList(items , baseSlug = "" ) {
+  if(!Array.isArray(items) || items.length <= 0) {
+    console.error("du lieu ko hp le")
+    return
+}
     const ul = document.createElement("ul")
     items.forEach( item => {
         const li = document.createElement('li')
         const link = document.createElement("a")
-        link.href = item.slugs ?? item.slug
+        const currentSlug = baseSlug ? `${baseSlug}/${item.slug}` : item.slug
+        link.href = currentSlug
         link.textContent = item.name
         
         li.appendChild(link)
@@ -103,7 +77,7 @@ function createElementList(items) {
 
         if(item.children) {
             if(item.children.length > 0) {
-                li.appendChild(createElementList(item.children))
+                li.appendChild(createElementList(item.children, currentSlug))
             }
         }
     })

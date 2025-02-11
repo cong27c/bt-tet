@@ -69,6 +69,10 @@ const categories = [
 
 
 function handleArrList(arr) {
+  if(!Array.isArray(arr) || arr.length <= 0) {
+    console.error("du lieu ko hp le")
+    return
+}
     let obj = {}
     let newArr = []
     arr.forEach( item => {
@@ -110,7 +114,6 @@ function handleArrList(arr) {
             ulList[i].className = `sub-menu-${i} sub-menu`
         }
     
-    console.log(mainMenuElements.outerHTML);
     document.body.appendChild(mainMenuElements)
 }
 

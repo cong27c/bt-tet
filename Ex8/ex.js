@@ -14,7 +14,6 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log(tipInput.value);
         if (isNaN(totalBill) || isNaN(numberOfPeople) || numberOfPeople <= 0 || totalBill <= 0 || tip < 0 || totalBill < tip) {
         resultDesc.textContent = "Vui lòng nhập số liệu hợp lệ."
-        total.textContent = "Vui lòng nhập số liệu hợp lệ."
         totalBillInput.value = ''
         numberOfPeopleInput.value = ''
         tipInput.value = ''
@@ -24,8 +23,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const totalAmount = totalBill + tip
     const amountPerPerson = totalAmount / numberOfPeople
 
-    resultDesc.textContent = `Mỗi người cần trả: ${amountPerPerson.toFixed(2)} VNĐ`
-    total.textContent = `Tổng thiệt hại là: ${totalAmount.toFixed(2)} VNĐ`
+    resultDesc.textContent = `Mỗi người cần trả: ${amountPerPerson.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })}`
+    total.textContent = `Tổng thiệt hại là: ${totalAmount.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })}`
 
 
     totalBillInput.value = ''
