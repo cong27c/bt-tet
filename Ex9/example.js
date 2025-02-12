@@ -19,7 +19,8 @@ function changeProductQuantity(productId, change) {
 function addToCart(productId, price, quantity) {
   quantity = parseInt(quantity, 10);
   if (isNaN(quantity) || quantity < 1) {
-    quantity = 1;
+    alert("quantity phai lon hon 0")
+    return
   }
 
   const existingItem = cart.find((item) => item.productId === productId);
@@ -77,7 +78,10 @@ function changeQuantity(productId, change) {
 }
 
 function updateQuantity(productId, quantity) {
-  if(quantity < 1) return alert("quantity phai lon hon 0")
+  if(quantity < 1) {
+    alert("quantity phai lon hon 0")
+    quantity = 1
+  }
   const item = cart.find((item) => item.productId === productId);
   if (item) {
     item.quantity = Math.max(1, parseInt(quantity, 10));

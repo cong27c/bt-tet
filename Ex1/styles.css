@@ -106,18 +106,18 @@ main {
 #allTask { 
     position:absolute ;
     top: 112px;
-    right: 270px;
+    right: 410px;
     color:  aqua;
 }
 #activeList {
     position: absolute;
     color: #50ad7e;
     top: 172px;
-    right: 280px;
+    right: 420px;
 } 
 #doneList {
     position: absolute;
     color: #ea9652;
     top: 232px;
-    right: 260px;
+    right: 400px;
 }

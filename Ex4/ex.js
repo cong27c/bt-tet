@@ -55,6 +55,16 @@ function handleLifePathNumber() {
         const value = todoInput.value
         const arr = value.split("-").join("").split("")
         
+        const inputDate = new Date(value);
+        const currentDate = new Date();
+
+        if (inputDate > currentDate) {
+            alert("Ngày sinh không thể lớn hơn ngày hiện tại.");
+            todoInput.value = ""
+            return;
+        }
+
+
         if (!value) {
             alert("Vui lòng nhập ngày tháng năm sinh.");
             return;

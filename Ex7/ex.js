@@ -30,7 +30,11 @@ function calculate() {
                 result = 'Chưa chọn phép toán'
         }
     } 
-     document.getElementById('result').textContent = result
+     if(so2 !== 0) {
+        document.getElementById('result').textContent = `${so1} ${operation.value} ${so2} = ${result}`
+     } else {
+        document.getElementById('result').textContent = result
+     }
 
        document.getElementById('so1').value = ''
        document.getElementById('so2').value = ''
